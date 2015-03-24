@@ -6,6 +6,20 @@
 -->
 <html>
 	<head>
+	 <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC06bL23uPQyWMo7yH4vMxAS0RNhRwQ6yE">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: -34.397, lng: 150.644},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 		<title>Map-Embedded Linux Spring 2015</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -63,12 +77,7 @@
 				<div class="box">
 					<span class="image featured"><img src="images/drone.jpg" alt="" /></span>
 					<!--<h3>This is a subheading</h3>-->
-					<iframe
-  					width="450"
-  					height="250"
-  					frameborder="0" style="border:0"
-  					src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC06bL23uPQyWMo7yH4vMxAS0RNhRwQ6yE&q=suny New paltz">
-					</iframe>
+				   <div id="map-canvas"></div>
 					<!--<div class="row">
 						<div class="6u 12u(mobilep)">
 							<h3>And now a subheading</h3>
