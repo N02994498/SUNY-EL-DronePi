@@ -17,6 +17,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="js/smoothscroll.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -24,14 +25,17 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body class="landing">
+	<body name="Home" class="landing">
 
 		<!-- Header -->
 			<header id="header" class="alt">
 				<h1><a href="index.html">Embedded Linux</a> - Spring 2015</h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="#Home" class="smoothScroll">Home</a></li>
+						<li><a href="#About" class="smoothScroll">About</a></li>
+						<li><a href="#Map" class="smoothScroll">Map</a></li>
+						<li><a href="#Team" class="smoothScroll">The Team</a></li>
 						<li>
 							<a href="" class="icon fa-angle-down">Menu</a>
 							<ul>
@@ -57,8 +61,8 @@
 		<!-- Banner -->
 			<section id="banner">
 				<h2>Drone</h2>
-				<p>Our drone project for Embedded Linux Spring 2015.</p>
 				<ul class="actions">
+				<p>Our drone project for Embedded Linux Spring 2015.</p>
 					<li><a href="map.html" class="button special">View Map</a></li>
 					<li><a href="#" class="button">Learn More</a></li>
 				</ul>
@@ -67,7 +71,7 @@
 		<!-- Main -->
 			<section id="main" class="container">
 
-				<section class="box special">
+				<section name="About" class="box special">
 					<header class="major">
 						<h2>Blandit varius ut praesent
 						<br />
@@ -78,7 +82,7 @@
 					<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
 				</section>
 
-				<section class="box special features">
+				<section name="Team" class="box special features">
 					<div class="features-row">
 						<section>
 							<span class="icon major fa-bolt accent2"></span>
@@ -135,9 +139,9 @@
 			</section>
 
 		<!-- CTA -->
-			<!--section id="cta">
+			<section name="Map" id="cta">
 
-				<h2>Learn More</h2>
+				<h2>The Map</h2>
 				<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
 
 				<form>
@@ -151,7 +155,7 @@
 					</div>
 				</form>
 
-			</section>-->
+			</section>
 
 		<!-- Footer -->
 			<footer id="footer">
