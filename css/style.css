@@ -986,7 +986,7 @@
 	@keyframes reveal-header { 0% { top: -5em; } 100% { top: 0; } }
 
 	#header {
-		background: #444;
+		background: rgb(0, 62, 126);
 		color: #bbb;
 		cursor: default;
 		height: 3.25em;
@@ -1107,7 +1107,7 @@
 				right: 0;
 			}
 
-		#header.reveal {
+		#header. {
 			-moz-animation: reveal-header 0.5s;
 			-webkit-animation: reveal-header 0.5s;
 			-o-animation: reveal-header 0.5s;
@@ -1222,10 +1222,8 @@
 	#banner {
 		background-attachment: scroll,							fixed;
 		background-color: #666;
-		background-image: url("images/overlay.png"), url("../images/banner.jpg");
-		background-position: top left,						center center;
-		background-repeat: repeat,							no-repeat;
-		background-size: auto,							cover;
+		background-image: url("http://bgfons.com/upload/clouds_texture2879.jpg");no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;
+		background-size: cover;
 		color: #fff;
 		padding: 12em 0 20em 0;
 		text-align: center;
@@ -1285,6 +1283,8 @@
 
 /* Main */
 
+	#main {width:100%; margin:0 0 0 0;}
+
 	#main {
 		padding: 4em 0;
 	}
@@ -1311,6 +1311,26 @@
 	body.landing #main {
 		margin-top: -14em;
 	}
+	
+
+/* Additions */
+
+.team {margin:auto; width:1000px;}
+
+.google-maps {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+.google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 500px!important;
+}
+
 
 /* Footer */
 
@@ -1363,8 +1383,6 @@
 /* CTA */
 
 	#cta {
-		background: #e89980;
-		color: #f9e5df;
 		padding: 3.5em 0 4em 0;
 		text-align: center;
 	}
