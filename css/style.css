@@ -408,7 +408,7 @@
 
 	.box {
 		background: #fff;
-		border-radius: 6px;
+		/*border-radius: 6px; Rounded corners are dumb.*/
 		box-shadow: 0 2px 0 0 #e5e5e5;
 		margin: 0 0 2em 0;
 		padding: 3em;
@@ -1005,8 +1005,7 @@
 			line-height: inherit;
 			margin: 0;
 			padding: 0;
-			position: absolute;
-			top: 0;
+			text-align: center;
 		}
 
 			#header h1 a {
@@ -1225,7 +1224,7 @@
 		background-image: url("http://bgfons.com/upload/clouds_texture2879.jpg");no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;
 		background-size: cover;
 		color: #fff;
-		padding: 12em 0 20em 0;
+		padding: 3em 0 12em 0;
 		text-align: center;
 	}
 
@@ -1283,7 +1282,7 @@
 
 /* Main */
 
-	#main {width:100%; margin:0 0 0 0;}
+	#main {width:100%; margin:0 0 0 0;padding-bottom:0px!important;}
 
 	#main {
 		padding: 4em 0;
@@ -1315,13 +1314,19 @@
 
 /* Additions */
 
-.team {margin:auto; width:1000px;}
+@media only screen and (max-device-width: 480px) {
+.el-drone-logo {max-width:200px; padding-bottom:45px;}
+	}
+
+.team-block {width:33%;}
+
+.drone-button {background-color:rgb(245, 132, 38)!important;}
 
 .google-maps {
         position: relative;
-        padding-bottom: 75%; // This is the aspect ratio
+        padding-bottom: 500px;  // This is the aspect ratio*/
         height: 0;
-        overflow: hidden;
+        overflow: hidden;	
     }
 .google-maps iframe {
         position: absolute;
@@ -1331,6 +1336,8 @@
         height: 500px!important;
 }
 
+.el-drone-logo {width:600px;padding-bottom:45px;}
+.el-np-logo {height:100%;position:absolute;margin:0;padding:0;}
 
 /* Footer */
 
