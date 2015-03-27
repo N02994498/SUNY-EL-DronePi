@@ -1337,7 +1337,9 @@
 }
 
 .el-drone-logo {width:600px;padding-bottom:45px;}
-.el-np-logo {height:100%;position:absolute;margin:0;padding:0;}
+.el-np-logo {height:100%;margin:0;padding:0;}
+#header a{border:none;}
+.el-np-rpi-logo {padding-left:10px;height:100%;margin:0;}
 
 /* Footer */
 
