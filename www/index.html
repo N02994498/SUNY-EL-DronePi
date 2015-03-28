@@ -18,14 +18,19 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="js/smoothscroll.js"></script>
-		<script> function initialize() {
-		var myLatlng = new google.maps.LatLng(41.7436,74.0839);
+		<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByz8zPD_nN5CDzy5oxWm-WOwFCaGsGSNc">
+		</script>
+		<script type="text/javascript">
+		function initialize() {
+		var myLatlng = new google.maps.LatLng(41.7436,-74.0839);
 		var mapOptions = {
-		zoom: 4,
+		zoom: 15,
 		center: myLatlng
 		};
 
-		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		var map = new google.maps.Map(document.getElementById('google-canvas'),
+            mapOptions);
 
 		var contentString = 'TESTTTT';
 
@@ -178,9 +183,7 @@
 
 				<h2>The Map</h2>
 				
-				<div class="google-maps">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d753.4182006968296!2d-74.0833586!3d41.744154300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd2279565cf5d9%3A0xe8ee4c8841822c81!2sOld+Main%2C+State+University+of+New+York+at+New+Paltz%2C+New+Paltz%2C+NY+12561!5e1!3m2!1sen!2sus!4v1427381473115" frameborder="0" style="border:0"></iframe>
-				</div>
+				<div class="google-maps" id="google-canvas"></div>
 				
 			</section>
 
