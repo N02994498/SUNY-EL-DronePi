@@ -26,9 +26,9 @@
 		var myLatlng = new google.maps.LatLng(41.744192, -74.083375);
 		var mapOptions = {
 		zoom: 15,
-		center: myLatlng
+		center: myLatlng,
+		mapTypeId: 'satellite'
 		};
-		map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
 
 		var map = new google.maps.Map(document.getElementById('google-canvas'),
             mapOptions);
