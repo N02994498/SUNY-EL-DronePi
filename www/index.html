@@ -21,6 +21,17 @@
 		<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgY7lXsV4uZ1cd1wBfVULR2i-k-eOcOsA">
 		</script>
+		 <style type="text/css">
+		.labels {
+		color: white;
+		background-color: red;
+		font-family: "Lucida Grande", "Arial", sans-serif;
+		font-size: 10px;
+		text-align: center;
+		width: 100px;     
+		white-space: nowrap;
+		}
+ </style>
 		<script type="text/javascript">
 		function initialize() {
 		var myLatlng = new google.maps.LatLng(41.744192, -74.083375);
@@ -29,6 +40,8 @@
 		center: myLatlng,
 		mapTypeId: 'satellite'
 		};
+		var pictureLabel = document.createElement("img");
+		pictureLabel.src = "http://drone.nulldivision.com/files/photos/IMG_20150327_101111.jpg";
 
 		var map = new google.maps.Map(document.getElementById('google-canvas'),
             mapOptions);
@@ -42,7 +55,11 @@
 		var marker = new google.maps.Marker({
 			position: myLatlng,
 			map: map,
-			title: 'Old Main SUNY New Paltz'
+			title: 'Old Main SUNY New Paltz',
+			labelStyle: {opacity: 1.00},
+			labelContent: pictureLabel,
+			labelAnchor: new google.maps.Point(50, 0),
+			labelClass: "labels",
 		});
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.open(map,marker);
