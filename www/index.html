@@ -44,6 +44,21 @@
 			map: map,
 			title: 'Old Main SUNY New Paltz'
 		});
+
+		$.getJSON('NPTest.json', function(data) { 
+            $.each( data.points, function(i, value) {
+
+                var myLatlng = new google.maps.LatLng(value.lat, value.lon);
+                alert(myLatlng);
+                var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: "text "+value.lon
+                });
+
+            });
+        }
+
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.open(map,marker);
 		});
