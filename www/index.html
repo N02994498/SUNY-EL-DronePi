@@ -23,34 +23,34 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgY7lXsV4uZ1cd1wBfVULR2i-k-eOcOsA">
 		</script>
 		<script type="text/javascript">
-		function initialize() {
-		var myLatlng = new google.maps.LatLng(41.744192, -74.083375);
-		var mapOptions = {
-		zoom: 18,
-		center: myLatlng,
-		mapTypeId: 'hybrid'
-		};
+			function initialize() {
+			var myLatlng = new google.maps.LatLng(41.744192, -74.083375);
+			var mapOptions = {
+			zoom: 18,
+			center: myLatlng,
+			mapTypeId: 'hybrid'
+			};
 
-		var map = new google.maps.Map(document.getElementById('google-canvas'),
-            mapOptions);
+			var map = new google.maps.Map(document.getElementById('google-canvas'),
+				mapOptions);
 
-		var contentString = '<img src="http://drone.nulldivision.com/files/photos/IMG_20150327_101111.jpg" height="300" width="650"</img>';
+			var contentString = '<img src="http://drone.nulldivision.com/files/photos/IMG_20150327_101111.jpg" height="300" width="650"</img>';
 
-		var infowindow = new google.maps.InfoWindow({
-		content: contentString
-		});
+			var infowindow = new google.maps.InfoWindow({
+			content: contentString
+			});
 
-		var marker = new google.maps.Marker({
-			position: myLatlng,
-			map: map,
-			title: 'Old Main SUNY New Paltz'
-		});
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map: map,
+				title: 'Old Main SUNY New Paltz'
+			});
 
-		google.maps.event.addListener(marker, 'click', function() {
-			infowindow.open(map,marker);
-		});
-		}
-		google.maps.event.addDomListener(window, 'load', initialize);
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,marker);
+			});
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
@@ -100,20 +100,55 @@
 		<!-- Main -->
 			<section id="main" class="container">
 				<a name="About" href="#About"></a>
-				<section class="box special">
+				<section class="box special el-about">
 					<header class="major">
 						<h2>About the Drone Project for Embedded Linux - Spring 2015</h2>
-						<p>We are awesome. We're going to fly this thing... it's called a drone. Then we're going to mount a pie on it. Oh wait, sorry, a <i>pi</i>... Hopefully it flies, and the pi won't get destroyed. Along the way, maybe we'll take some pretty pictures.</p><br/><br/>
-						<a href="code" class="drone-button button special">Files Test</a><br/>
-						<p>#PiInTheSky</p>
+						<p>We are awesome. We're going to fly this thing... it's called a drone. Then we're going to mount a pie on it. Oh wait, sorry, a <i>pi</i>... Hopefully it flies, and the pi won't get destroyed. Along the way, maybe we'll take some pretty pictures.</p>
+						<!--<a href="code" class="drone-button button special">Files Test</a><br/>-->
+						<p>#PiInTheSky</p><br/>
+						<div class="el-tabs-container">
+							<script type="text/javascript">
+								$(document).ready(function() {
+									$("#el-content div").hide(); // Initially hide all content
+									$("#el-tabs li:first").attr("id","current"); // Activate first tab
+									$("#el-content div:first").fadeIn(); // Show first tab content
+									
+									$('#el-tabs a').click(function(e) {
+										e.preventDefault();        
+										$("#el-content div").hide(); //Hide all content
+										$("#el-tabs li").attr("id",""); //Reset id's
+										$(this).parent().attr("id","current"); // Activate this
+										$('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+									});
+								})();
+							</script>
+							<ul id="el-tabs">
+								<li><a href="#el-tab1" title="el-tab1">Intro</a></li>
+								<li><a href="#el-tab2" title="el-tab2">About Drone</a></li>
+								<li><a href="#el-tab3" title="el-tab3">About Pi</a></li>
+								<li><a href="#el-tab4" title="el-tab4">About Server</a></li>    
+							</ul>
+
+							<div id="el-content"> 
+								<div id="el-tab1">
+									Stuff, testing.<br/>
+									<a href="code" class="drone-button button special">Files Test</a>
+								</div>
+								<div id="el-tab2">Stuff, testing.</div>
+								<div id="el-tab3">Stuff, testing.</div>
+								<div id="el-tab4">Stuff, testing.</div>
+							</div>
+						</div>
 					</header>
 					<!--<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>-->
 				</section>
 				
-				<section class="box special features">
+				<section class="box special features el-team">
 					<a name="Team" href="#Team"></a>
-					<h2>The Team - Who we are</h2>
-					<p>Well. We're awesome people.</p>
+					<header class="major">
+						<h2>The Team - Who we are</h2>
+						<p>Well. We're awesome people.</p>
+					</header>
 					
 					<div class="row">
 						<div class="team-block 6u 12u(narrower)">
@@ -178,18 +213,16 @@
 						</div>
 					</div>
 				</section>
-			</section>
-
-		<!-- CTA -->
-			<a name="Map" href="#Map"></a>
-			<section name="Map" id="cta">
-
-				<h2>The Map</h2>
 				
-				<div class="google-maps" id="google-canvas"></div>
-				
+				<section name="Map">
+				<a name="Map" href="#Map"></a>
+					<header class="major">
+						<h2>The Map</h2>
+						<p>Missions and Pictures</p>
+					</header>
+				<div class="el-maps" id="google-canvas"></div>
 			</section>
-
+			</section>
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
@@ -201,7 +234,7 @@
 					<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>-->
 				</ul>
 				<ul class="copyright">
-					<li>&copy; SUNY New Paltz Embedded Linux Spring 2015 Drone Project All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; SUNY New Paltz. Embedded Linux - Spring 2015 Drone Project. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</footer>
 

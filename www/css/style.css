@@ -1315,20 +1315,24 @@
 /* Additions */
 
 @media only screen and (max-device-width: 480px) {
-.el-drone-logo {max-width:200px; padding-bottom:45px;}
-	}
+.el-drone-logo {max-width:200px; padding-bottom:45px;}}
 
-.team-block {width:33%;}
+.team-block {width:20%;}
 
-.drone-button {background-color:rgb(245, 132, 38)!important;}
+.el-about {margin-bottom: 0px;}
+.el-team {background-color:#3983C3;color:#ffffff;margin-bottom:0px;}
+.el-team h2, .el-team header p {color:#ffffff;}
 
-.google-maps {
+
+.drone-button {background-color:rgb(0, 62, 126)!important;}
+
+.el-maps {
         position: relative;
         padding-bottom: 500px;  // This is the aspect ratio*/
         height: 0;
         overflow: hidden;	
     }
-.google-maps iframe {
+.el-maps iframe {
         position: absolute;
         top: 0;
         left: 0;
@@ -1341,11 +1345,74 @@
 #header a{border:none;}
 .el-np-rpi-logo {padding-left:10px;height:100%;margin:0;}
 
+.el-tabs-container {width:50%;margin:auto;}
+
+#el-tabs {
+  overflow: auto;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#el-tabs li {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#el-tabs a {
+    box-shadow: -4px 0 0 rgba(0, 0, 0, .2);
+    background: #ad1c1c;
+    background: linear-gradient(220deg, transparent 10px, rgb(0, 62, 126) 10px);
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+    color: #fff;
+    float: left;
+    font: bold 12px/35px 'Lucida sans', Arial, Helvetica;
+    height: 35px;
+    padding: 0 30px;
+	border: none;
+}
+
+#el-tabs a:hover {
+    background: #c93434;
+    background: linear-gradient(220deg, transparent 10px, #3983C3 10px);    
+    border: none;
+}
+
+#el-tabs a:focus {
+    outline: 0;
+}
+
+#el-tabs #current a {
+    background: #fff;
+    background: linear-gradient(220deg, transparent 10px, #3983C3 10px);
+    text-shadow: none;    
+    color: #fff;
+    border: none;
+}
+
+#el-content {
+    background-color: #fff;
+    background-image:         linear-gradient(top, #fff, #ddd);
+    border-radius: 0 2px 2px 2px;
+    box-shadow: 1px 2px 2px #000, 0 -1px 0 #fff inset;
+    padding: 30px;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	text-align:left;
+}
+
+/*
+#el-content div {
+    height: 220px; 
+}*/
+
 /* Footer */
 
 	#footer {
 		background: #f0f0f0;
-		padding: 4em 0 6em 0;
+		padding: 2em 0 1em 0;
 		text-align: center;
 	}
 
