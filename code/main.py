@@ -6,7 +6,7 @@ camera = camera.Camera()
 gps = gps.Gps()
 
 # camera
-def takePicture(gpsData):
+def triggerCamera(gpsData):
     gpsCoordinatesOptions = ""
 
     if gpsData:
@@ -51,4 +51,4 @@ def formatGpsData(gpsData):
 # TODO gps reading 
 gpsData = gps.read()
 gpsDataFormated = formatGpsData(gpsData)
-takePicture(gpsDataFormated)
+triggerCamera(gpsDataFormated)
