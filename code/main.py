@@ -1,23 +1,33 @@
 import camera
 import gps
 import datetime
+import database
+import os
+
 
 camera = camera.Camera()
 gps = gps.Gps()
+db = database.Database('../www/database/pi_database.db')
 
 # camera
 def triggerCamera(gpsData):
+
     gpsCoordinatesOptions = ""
 
-    if gpsData:
-        gpsCoordinatesOptions = (
-        " --exif GPS.GPSLatitude=%s " 
-        " --exif GPS.GPSLongitude=%s "
-        " --exif GPS.GPSAltitude=%s "
-        ) % ( gpsData['latitude'], gpsData['longitude'], gpsData['altitude'])
-    else:
-        dateString = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-        os.system( "echo 'ERROR: gpsData is empty' %s >> log.txt" % (dateString))
+    dateString = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+
+    gpsDataFormated = formatGpsData(gpsData)
+
+    # this section should be uncomented when the method formatGpsData is working
+    # if gpsData:
+    #     gpsCoordinatesOptions = (
+    #     " --exif GPS.GPSLatitude=%s "
+    #     " --exif GPS.GPSLongitude=%s "
+    #     " --exif GPS.GPSAltitude=%s "
+    #     ) % ( gpsDataFormated['latitude'], gpsDataFormated['longitude'], gpsDataFormated['altitude'])
+    # else:
+    #     print "ERROR: gpsData is empty"
+    #     os.system( "echo 'ERROR: gpsData is empty' %s >> log.txt" % (dateString))
 
     cameraOptions = (
                     " --exposure sports "
@@ -28,14 +38,29 @@ def triggerCamera(gpsData):
 
     options = cameraOptions + gpsCoordinatesOptions
 
+    fullPath = 'http://drone.nulldivision.com/www/images/camera/'
+    fileName = dateString + '.jpg'
+
+    dataToDatabase = {
+        'dateTime': dateString,
+        'pathToImage': fullPath + fileName,
+        'latitude': gpsData['latitude'],
+        'longitude': gpsData['longitude'],
+        'altitude': gpsData['altitude']
+    }
+
+    pathToImage = '../www/images/camera/' + fileName
+    db.dataEntry(dataToDatabase)
+
     try:
-        camera.takePicture(options)
+        camera.takePicture(options, pathToImage)
     except Exception, e:
         dateString = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         os.system( "echo 'ERROR: picture NOT saved' %s >> log.txt" % (dateString))
     else:
+        db.dataEntry(dataToDatabase)
         return 1
-  
+
 
 # TODO format lat and lon
 def formatGpsData(gpsData):
@@ -48,7 +73,6 @@ def formatGpsData(gpsData):
     gpsDataFormated['altitude'] = gpsData['altitude'] + '/10'
     return gpsDataFormated
 
-# TODO gps reading 
+# TODO gps reading
 gpsData = gps.read()
-gpsDataFormated = formatGpsData(gpsData)
-triggerCamera(gpsDataFormated)
+triggerCamera(gpsData)
