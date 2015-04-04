@@ -6,7 +6,7 @@ import os
 
 
 camera = camera.Camera()
-gps = gps.Gps()
+gps = gpsPi.Gps()
 db = database.Database('../www/database/pi_database.db')
 
 # camera
