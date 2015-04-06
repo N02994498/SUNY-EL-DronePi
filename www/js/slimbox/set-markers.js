@@ -9,7 +9,7 @@
 // create the markers 
 
 var markers = [
-  ['<h3>Slimbox: Single Image</h3>', 41.744192, -74.083375, 30 , "<div class=\"infowindow\"><p>This example produces a lightbox for a single image.</p><a href=\"images/image-1.jpg\" onclick='jQuery.slimbox([[\"images/image-1.jpg\", \"my caption\"]], 0);return false' rel=\"lightbox\" ><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>" ],  ['<h3>Slimbox: Image Slideshow</h3>', 39.751033, -104.949065, 2, "<div class=\"infowindow\"><p>This example produces a lightbox for an image array.</p><a href=\"images/image-2.jpg\" onclick='jQuery.slimbox([[\"images/image-2.jpg\", \"caption 1\"], [\"images/image-1.jpg\", \"caption 2\"]], 0);return false' rel=\"lightbox-groupname\" ><img src=\"images/image-2-thumb.jpg\"><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>"]];
+  ['<h3>Slimbox: Image Slideshow Old Main</h3>', 41.744192, -74.083375, 2, "<div class=\"infowindow\"><p>This example produces a lightbox for an image array, over Old Main.</p><a href=\"images/image-1.jpg\" onclick='jQuery.slimbox([[\"images/image-2.jpg\", \"caption 1\"], [\"images/image-1.jpg\", \"caption 2\"]], 0);return false' rel=\"lightbox-groupname\" ><img src=\"images/image-2-thumb.jpg\"><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>"]];
 
 
 
