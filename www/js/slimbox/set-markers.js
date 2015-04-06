@@ -9,21 +9,15 @@
 // create the markers 
 
 var markers = [
-  ['<h3>Slimbox: Single Image</h3>', 39.751033, -104.999065, 38, "<div class=\"infowindow\"><p>This example produces a lightbox for a single image.</p><a href=\"images/image-1.jpg\" onclick='jQuery.slimbox([[\"images/image-1.jpg\", \"my caption\"]], 0);return false' rel=\"lightbox\" ><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>" ],  ['<h3>Slimbox: Image Slideshow</h3>', 39.751033, -104.949065, 2, "<div class=\"infowindow\"><p>This example produces a lightbox for an image array.</p><a href=\"images/image-2.jpg\" onclick='jQuery.slimbox([[\"images/image-2.jpg\", \"caption 1\"], [\"images/image-1.jpg\", \"caption 2\"]], 0);return false' rel=\"lightbox-groupname\" ><img src=\"images/image-2-thumb.jpg\"><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>"],
-  ['<h3>Clearbox: Single Image</h3>', 39.751033, -104.899065, 4, "<div class=\"infowindow\"><p>This example produces a lightbox for a single image.<br />It uses <strong>clearbox</strong> instead of slimbox.<br /><br />NOTE! The clearbox.js file should be moved to your<br /> primary directory or edit the clearbox.js file accordingly.</p><a href=\"images/image-2.jpg\" onclick='CB_Open(\"href= images/image-2.jpg,,title=caption 1\");return false' rel=\"clearbox\"><img src=\"images/image-2-thumb.jpg\"></a><br /><br /></div>"], 
-  ['<h3>Clearbox: Image Gallery</h3>', 39.751033, -104.849065, 5, "<div class=\"infowindow\"><p>This example produces a lightbox for an image gallery.<br />It uses <strong>clearbox</strong> instead of slimbox.<br /><br />NOTE! The clearbox.js file should be moved to your<br /> primary directory or edit the clearbox.js file accordingly.<br />Also, resize buttons don't work in IE6 per the developer.</p> <a href=\"images/image-2.jpg\" onclick='CB_Open(\"gallery=groupname,,href=images/image-2.jpg,,title=caption 2\");return false' rel=\"clearbox[gallery=groupname,,href=images/image-2.jpg,,title=caption 2]\"><img src=\"images/image-2-thumb.jpg\"></a> <a href=\"images/image-1.jpg\" onclick='CB_Open(\"gallery=groupname,,href=images/image-1.jpg,,title=caption 1\");return false' rel=\"clearbox[gallery=groupname,,href=images/image-1.jpg,,title=caption 1]\"><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>"],
-  ['<h3>Clearbox: Rich Content</h3>', 39.751033, -104.799065, 3, "<div class=\"infowindow\"><p>This example produces a lightbox for a rich content<br />such as YouTube videos, Flash or iframe content.<br />It uses <strong>clearbox</strong> instead of slimbox.</p><a href=\"images/image-5-thumb.jpg\" onclick='CB_Open(\"href=http://www.youtube.com/v/suxjuZUwsy8,,tnhrf=nopreview,,width=600,,height=500\");return false' rel=\"clearbox\"><img src=\"images/image-5-thumb.jpg\"></a><br /><br /></div>"],
-  ['<h3>Clearbox: Custom Array</h3>', 39.751033, -104.749065, 3, "<div class=\"infowindow\"><p>This example produces a lightbox for a  gallery using a custom <strong>clearbox</strong> array. </p><a href=\"images/road1.jpg\" onclick='CB_Open(\"gallery=myphotos,,href=images/road1.jpg\");return false' rel=\"clearbox[gallery=myphotos,,href=images/road1.jpg]\"><img src=\"images/road1-thumb.jpg\"></a><a href=\"images/image-1.jpg\" onclick='CB_Open(\"gallery=myphotos,,href=images/image-2.jpg\");return false' rel=\"clearbox[gallery=myphotos,,href=images/image-2.jpg]\"><img src=\"images/image-2-thumb.jpg\"></a><br /><br /></div>"]
-  
-];
+  ['<h3>Slimbox: Single Image</h3>', 41.744192, -74.083375, 30 , "<div class=\"infowindow\"><p>This example produces a lightbox for a single image.</p><a href=\"images/image-1.jpg\" onclick='jQuery.slimbox([[\"images/image-1.jpg\", \"my caption\"]], 0);return false' rel=\"lightbox\" ><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>" ],  ['<h3>Slimbox: Image Slideshow</h3>', 39.751033, -104.949065, 2, "<div class=\"infowindow\"><p>This example produces a lightbox for an image array.</p><a href=\"images/image-2.jpg\" onclick='jQuery.slimbox([[\"images/image-2.jpg\", \"caption 1\"], [\"images/image-1.jpg\", \"caption 2\"]], 0);return false' rel=\"lightbox-groupname\" ><img src=\"images/image-2-thumb.jpg\"><img src=\"images/image-1-thumb.jpg\"></a><br /><br /></div>"]];
 
 
 
 function initialize() {
   var myOptions = {
-    zoom: 10,
-    center: new google.maps.LatLng(39.78110197709871, -104.8678857421875),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    zoom: 16,
+    center: new google.maps.LatLng(41.744192, -74.083375),
+    mapTypeId: google.maps.MapTypeId.HYBRID
   }
   var map = new google.maps.Map(document.getElementById("map_canvas"),
                                 myOptions);
