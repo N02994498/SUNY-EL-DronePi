@@ -3,7 +3,7 @@ class Gps(object):
 	def read(self):
 		# temporary mock
 		gpsData = {}
-		gpsData['latitude'] = '-33/1,66/1,451/100'
-		gpsData['longitude'] = '5/1,10/1,15/100'
+		gpsData['latitude'] = '41.7365927'
+		gpsData['longitude'] = '-74.0874642'
 		gpsData['altitude'] = '71'
 		return gpsData
