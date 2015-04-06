@@ -20,27 +20,18 @@ class GpsPoller(threading.Thread):
 		global gpsd
 		while gpsp.running:
 			gpsd.next()
+	def read(self):
+                gpsData = {}
+                gpsData['latitude'] = gpsd.fix.latitude
+                gpsData['longitude'] = gpsd.fix.longitude
+                gpsData['altitude'] = gpsd.fix.altitude
+                return gpsData
 
-if __name__ == '__main__' :
-	gpsp = GpsPoller()
-	try:
-		gpsp.start()
-		while True:
 
-			os.system('clear')
-
-			print
-			print 'GPS reading'
-			print '-------------------------------------------------'
-			print 'latitude   ' , gpsd.fix.latitude
-			print 'longitude   ' , gpsd.fix.longitude
-			print 'altitude (m)   ' , gpsd.fix.altitude
-			print
-
-			time.sleep(2)
+#			time.sleep(2)
 
 	except (KeyboardInterrupt, SystemExit):
 		print "\nKilling Thread..."
 		gpsp.running = False
 		gpsp.join()
-		print "Done. \nExiting."
+		print "Do. \nExiting."

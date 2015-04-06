@@ -1,5 +1,5 @@
 import camera
-import gps
+import gpsPoller
 import datetime
 import database
 import os
@@ -75,4 +75,21 @@ def formatGpsData(gpsData):
 
 # TODO gps reading
 gpsData = gps.read()
+
+#show gps reading in terminal
+if __name__ == '__main__' :
+        gpsp = GpsPoller()
+        try:
+                gpsp.start()
+                while True:
+
+                        os.system('clear')
+
+                        print
+                        print 'GPS reading'
+                        print '-------------------------------------------------'
+                        print 'latitude   ' , gpsData['latitude']
+                        print 'longitude   ' , gpsdData['longitude']
+                        print 'altitude (m)   ' , gpsdData['altitude']
+                        print
 triggerCamera(gpsData)
